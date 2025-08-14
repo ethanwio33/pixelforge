@@ -1,29 +1,43 @@
 import 'package:provider/provider.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-
+import '/main/AIWallpaperApp.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
+import 'flutter_flow/nav/nav.dart';
+import 'index.dart';
+import 'services/InterstitialAdService.dart';
 
 import '/flutter_flow/admob_util.dart';
+// main.dart
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  GoRouter.optionURLReflectsImperativeAPIs = true;
+  // The line below is not needed for the new setup, but can be kept.
+  // GoRouter.optionURLReflectsImperativeAPIs = true;
   usePathUrlStrategy();
 
+  // You can keep or remove the FlutterFlow and AdMob initializations
+  // depending on whether you need them elsewhere in your app.
   await FlutterFlowTheme.initialize();
   adMobRequestConsent();
   adMobUpdateRequestConfiguration();
+  InterstitialAdService.initialize();
 
-  final appState = FFAppState(); // Initialize FFAppState
-  await appState.initializePersistedState();
+  // The FFAppState and ChangeNotifierProvider are part of the old setup.
+  // final appState = FFAppState();
+  // await appState.initializePersistedState();
 
-  runApp(ChangeNotifierProvider(
-    create: (context) => appState,
-    child: MyApp(),
-  ));
+  // runApp(ChangeNotifierProvider(
+  //   create: (context) => appState,
+  //   child: MyApp(),
+  // ));
+
+  // --- NEW CODE ---
+  // This will now be the entry point of your app.
+  runApp(const AIWallpaperApp());
 }
 
 class MyApp extends StatefulWidget {

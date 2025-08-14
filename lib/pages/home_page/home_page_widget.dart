@@ -1,8 +1,14 @@
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import '/main/AIWallpaperApp.dart';
+
 import 'home_page_model.dart';
 export 'home_page_model.dart';
 
@@ -35,7 +41,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       );
       await actions.initAppTrackingTransparency();
 
-      context.pushNamed(DemoWidget.routeName);
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const AIWallpaperApp()),
+      );
     });
   }
 

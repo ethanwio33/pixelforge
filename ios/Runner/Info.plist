@@ -68,7 +68,7 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
   <key>GADApplicationIdentifier</key>
-	<string>ca-app-pub-3940256099942544~3347511713</string>
+	<string>ca-app-pub-2643954879026808~3486590848</string>
 	<key>SKAdNetworkItems</key>
 		<array>
 			<dict>
@@ -78,5 +78,20 @@
 		</array>
 	<key>io.flutter.embedded_views_preview</key>
 	<true/>
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<true/>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
+
+	<!-- Photo Library Usage permission -->
+	<key>NSAppTransportSecurity</key>
+<dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+</dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+<string>This app requires access to your photo library to upload and edit images.</string>
+<key>NSPhotoLibraryAddUsageDescription</key>
+<string>This app needs permission to save images to your gallery.</string>
 </dict>
 </plist>
